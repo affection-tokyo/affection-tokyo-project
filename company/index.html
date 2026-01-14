@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile | AFFECTION TOKYO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #fff; color: #1a1a1a; font-family: 'Noto Sans JP', sans-serif; line-height: 1.8; }
+        .font-serif-en { font-family: 'Cormorant Garamond', serif; }
+        .font-serif-jp { font-family: 'Noto Serif JP', serif; }
+        
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Table Design */
+        .profile-table th { width: 30%; font-weight: 400; color: #999; text-align: left; padding: 2rem 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #eee; }
+        .profile-table td { width: 70%; padding: 2rem 0; font-size: 0.85rem; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header class="p-6 md:p-12 flex justify-between items-center fixed top-0 w-full z-50 mix-blend-difference text-white">
+        <a href="../index.html" class="font-serif-en text-xl md:text-2xl tracking-[0.2em] uppercase">Affection Tokyo</a>
+        <nav class="hidden md:flex space-x-12 text-[10px] tracking-[0.3em] uppercase">
+            <a href="../brand/georgesuncinq.html">Brands</a>
+            <a href="../news/index.html">News</a>
+            <a href="index.html" class="border-b border-white pb-1">Company</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="pt-60 pb-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="font-serif-en text-[10px] tracking-[0.4em] text-neutral-400 uppercase block mb-12 fade-in">Mission</span>
+            <h1 class="font-serif-jp text-3xl md:text-5xl font-light leading-relaxed mb-16 fade-in">
+                一着の服に、<br class="md:hidden">ひと匙の愛をこめて。
+            </h1>
+            <div class="w-px h-24 bg-neutral-200 mx-auto fade-in"></div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 max-w-4xl mx-auto border-t border-neutral-100">
+        <h2 class="font-serif-en text-3xl tracking-widest uppercase mb-20 text-center fade-in">Corporate Profile</h2>
+        <table class="profile-table w-full">
+            <tr class="fade-in">
+                <th>Company Name</th>
+                <td>株式会社アフェクション東京</td>
+            </tr>
+            <tr class="fade-in">
+                <th>President</th>
+                <td>代表取締役 出水 康</td>
+            </tr>
+            <tr class="fade-in">
+                <th>Office</th>
+                <td>〒151-0051 東京都渋谷区千駄ヶ谷 1-9-6 K＆Kビル 2f</td>
+            </tr>
+            <tr class="fade-in">
+                <th>Phone</th>
+                <td>03-6447-1445</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="py-32 px-6 bg-neutral-50">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-serif-jp text-xl md:text-2xl mb-12 tracking-widest text-center fade-in">価値を育み、愛される存在へ</h2>
+            <div class="text-sm md:text-base text-neutral-600 space-y-8 leading-loose font-light fade-in">
+                <p>「Affection」という言葉には、時間とともに育まれていく深い愛情や、価値のある関係性を大切にしたいという想いが込められています。</p>
+                <p>私たちは単なる衣服の提供者ではなく、身に纏う人の心に寄り添い、日々を彩るパートナーでありたいと考えています。企画・デザインから生産、ブランディングまでを一貫して手がけることで、流行に左右されず長く愛され続けるプロダクトを創出します。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-neutral-100">
+        <div class="font-serif-en text-lg tracking-[0.2em] uppercase mb-8">Affection Tokyo</div>
+        <div class="flex justify-center space-x-8 mb-12 text-[9px] uppercase tracking-widest text-neutral-400">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Company</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+        <p class="text-[8px] tracking-[0.4em] text-neutral-300 uppercase">&copy; Affection Tokyo All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

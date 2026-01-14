@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFFECTION TOKYO | アフェクション東京</title>
+    <meta name="description" content="株式会社アフェクション東京。アパレル企画・運営、OEM/ODM事業、複数のファッションブランドを展開する企業サイトです。">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;500&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root { --color-bg: #ffffff; --color-text: #1a1a1a; }
+        body { background-color: var(--color-bg); color: var(--color-text); font-family: 'Noto Sans JP', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
+        .font-serif-en { font-family: 'Cormorant Garamond', serif; }
+        .font-serif-jp { font-family: 'Noto Serif JP', serif; }
+        
+        /* Animation */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 1.2s ease, transform 1.2s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Hero */
+        .hero-container { height: 100vh; position: relative; overflow: hidden; }
+        .parallax-img { object-fit: cover; width: 100%; height: 110%; transform: translateY(0); will-change: transform; }
+
+        /* Navigation Hover */
+        .nav-link { position: relative; transition: color 0.3s; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Brand Card */
+        .brand-card img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .brand-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-8 mix-blend-difference text-white">
+        <a href="index.html" class="text-xl md:text-2xl font-serif-en tracking-[0.2em] uppercase">Affection Tokyo</a>
+        
+        <nav class="hidden md:flex space-x-12 text-[10px] tracking-[0.3em] uppercase items-center">
+    <a href="../brand/index.html" class="nav-link">Brands</a> <a href="../news/index.html" class="nav-link">News</a>
+    <a href="../company/index.html" class="nav-link">Company</a>
+    <a href="../contact.html" class="nav-link">Contact</a>
+</nav>
+    </header>
+
+    <section class="hero-container">
+        <img src="https://affection-tokyo.github.io/official-site/corporate260101.jpg" alt="Main Visual" class="parallax-img">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white">
+            <h1 class="font-serif-en text-5xl md:text-9xl italic font-light mb-6 fade-in">Dressed in Affection</h1>
+            <p class="font-serif-jp text-xs md:text-sm tracking-[0.4em] fade-in delay-200">纏うたび、自分を愛せるように。</p>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-12 border-b border-neutral-100 pb-6">
+            <h2 class="font-serif-en text-3xl tracking-widest uppercase">Latest News</h2>
+            <a href="news/index.html" class="text-[10px] uppercase tracking-widest border-b border-black pb-1">View All</a>
+        </div>
+        <div class="space-y-8">
+            <a href="news/index.html" class="flex flex-col md:flex-row md:items-center gap-4 py-4 border-b border-neutral-50 group">
+                <span class="text-[10px] text-neutral-400 font-serif-en">2026.01.14</span>
+                <span class="px-2 py-1 bg-neutral-100 text-[9px] uppercase tracking-tighter w-fit">Press Release</span>
+                <p class="text-sm tracking-wider group-hover:text-neutral-500 transition">コーポレートサイトを刷新いたしました。</p>
+            </a>
+            <a href="news/index.html" class="flex flex-col md:flex-row md:items-center gap-4 py-4 border-b border-neutral-50 group">
+                <span class="text-[10px] text-neutral-400 font-serif-en">2026.01.08</span>
+                <span class="px-2 py-1 bg-neutral-100 text-[9px] uppercase tracking-tighter w-fit">Brand</span>
+                <p class="text-sm tracking-wider group-hover:text-neutral-500 transition">新ブランド展開に向けたプロジェクトが始動。</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-24 bg-neutral-50 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="font-serif-en text-4xl tracking-widest uppercase mb-4">Our Brands</h2>
+            <div class="w-8 h-px bg-black mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 justify-center">
+            <a href="brand/georgesuncinq.html" class="brand-card group block">
+                <div class="aspect-[4/5] overflow-hidden bg-white mb-6">
+                    <img src="https://affection-tokyo.github.io/official-site/corporate260102.jpg" alt="Georgesuncinq" class="w-full h-full object-cover">
+                </div>
+                <h3 class="font-serif-en text-xl tracking-widest mb-2">Georgesuncinq</h3>
+                <p class="text-[10px] text-neutral-400 uppercase tracking-widest">Georgesuncinq</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <section class="py-48 px-6 text-center">
+        <div class="fade-in">
+            <span class="font-serif-en text-[10px] tracking-[0.4em] text-neutral-400 uppercase block mb-8">About Company</span>
+            <h2 class="font-serif-jp text-2xl md:text-3xl font-light leading-relaxed mb-12">
+                一着の服に、ひと匙の愛をこめて。<br>
+                長く愛されるプロダクトとブランドの創出。
+            </h2>
+            <a href="company/index.html" class="text-[11px] font-bold border-b border-black pb-1 uppercase tracking-widest">Read More</a>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 px-6 border-t border-neutral-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="font-serif-en text-lg tracking-widest uppercase">Affection Tokyo</div>
+            <div class="flex space-x-8 text-[9px] uppercase tracking-widest">
+                <a href="company/index.html" class="hover:text-neutral-400">Privacy Policy</a>
+                <a href="contact.html" class="hover:text-neutral-400">Contact</a>
+            </div>
+            <div class="text-[8px] tracking-[0.4em] text-neutral-300 uppercase">
+                &copy; Affection Tokyo All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const heroImg = document.querySelector('.parallax-img');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scroll * 0.1}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
