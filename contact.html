@@ -5,59 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | AFFECTION TOKYO</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300&family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #fff; font-family: 'Noto Sans JP', sans-serif; }
+        body { background-color: #fff; color: #1a1a1a; font-family: 'Noto Sans JP', sans-serif; overflow-x: hidden; }
         .font-serif-en { font-family: 'Cormorant Garamond', serif; }
-        .form-input { border: 1px solid #eee; padding: 12px 16px; width: 100%; transition: all 0.3s; font-size: 0.9rem; }
+        
+        /* フォーム入力欄のスタイル */
+        .form-input { border: 1px solid #eee; padding: 12px 16px; width: 100%; transition: all 0.3s; font-size: 0.85rem; border-radius: 0; }
         .form-input:focus { outline: none; border-color: #1a1a1a; }
-        .btn-luxury { background-color: #111; color: #fff; padding: 20px 60px; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.3em; transition: all 0.4s; }
+        
+        /* 送信ボタン */
+        .btn-luxury { background-color: #111; color: #fff; padding: 20px 80px; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.3em; transition: all 0.4s; }
         .btn-luxury:hover:not(:disabled) { background-color: #333; letter-spacing: 0.35em; }
+        .btn-luxury:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* ナビゲーションホバー */
+        .nav-link { position: relative; transition: color 0.3s; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
     </style>
 </head>
 <body>
-    <nav class="fixed top-0 right-0 p-8 z-50 flex gap-6 text-sm tracking-[0.2em] font-serif-en">
-        <a href="index.html" class="hover:opacity-50 transition">TOP</a>
-        <a href="brand/georgesuncinq.html" class="hover:opacity-50 transition">BRAND</a>
-    </nav>
-    <header class="p-6 md:p-12">
-        <a href="index.html" class="font-serif-en text-xl md:text-2xl tracking-[0.2em] uppercase">Affection Tokyo</a>
+
+    <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-8 mix-blend-difference text-white">
+        <a href="/index.html" class="text-xl md:text-2xl font-serif-en tracking-[0.2em] uppercase">Affection Tokyo</a>
+        
+        <nav class="hidden md:flex space-x-12 text-[10px] tracking-[0.3em] uppercase">
+            <a href="/brand/index.html" class="nav-link">Brands</a>
+            <a href="/news/index.html" class="nav-link">News</a>
+            <a href="/company/index.html" class="nav-link">Company</a>
+            <a href="/contact.html" class="nav-link border-b border-white pb-1">Contact</a>
+        </nav>
     </header>
 
-    <section class="py-20 md:py-32 max-w-xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="font-serif-en text-4xl font-light mb-4 italic">Inquiry Form</h2>
-            <p class="text-[10px] tracking-widest text-neutral-400 uppercase">お問い合わせ</p>
-        </div>
+    <section class="pt-60 pb-12 px-6 text-center">
+        <h1 class="font-serif-en text-5xl md:text-7xl italic font-light tracking-widest uppercase mb-4">Inquiry</h1>
+        <p class="text-[10px] tracking-[0.4em] text-neutral-400 uppercase">お問い合わせ</p>
+        <div class="w-8 h-px bg-black mx-auto mt-10"></div>
+    </section>
 
-        <form onsubmit="handleSubmit(event)" class="space-y-10">
+    <section class="pb-48 max-w-xl mx-auto px-6">
+        <form onsubmit="handleSubmit(event)" class="space-y-12">
             <div class="space-y-2">
-                <label class="block text-[10px] uppercase tracking-[0.2em] text-neutral-400">Company Name / 会社名</label>
+                <label class="block text-[9px] uppercase tracking-[0.2em] text-neutral-400">Company Name / 会社名</label>
                 <input type="text" name="company" class="form-input">
             </div>
+
             <div class="grid grid-cols-2 gap-8">
                 <div class="space-y-2">
-                    <label class="block text-[10px] uppercase tracking-[0.2em] text-neutral-400">Surname / 姓</label>
+                    <label class="block text-[9px] uppercase tracking-[0.2em] text-neutral-400">Surname / 姓</label>
                     <input type="text" name="surname" class="form-input" required>
                 </div>
                 <div class="space-y-2">
-                    <label class="block text-[10px] uppercase tracking-[0.2em] text-neutral-400">Given Name / 名</label>
+                    <label class="block text-[9px] uppercase tracking-[0.2em] text-neutral-400">Given Name / 名</label>
                     <input type="text" name="givenName" class="form-input" required>
                 </div>
             </div>
+
             <div class="space-y-2">
-                <label class="block text-[10px] uppercase tracking-[0.2em] text-neutral-400">Email Address / メールアドレス</label>
+                <label class="block text-[9px] uppercase tracking-[0.2em] text-neutral-400">Email Address / メールアドレス</label>
                 <input type="email" name="email" class="form-input" required>
             </div>
+
             <div class="space-y-2">
-                <label class="block text-[10px] uppercase tracking-[0.2em] text-neutral-400">Message / 内容</label>
+                <label class="block text-[9px] uppercase tracking-[0.2em] text-neutral-400">Message / お問い合わせ内容</label>
                 <textarea name="message" class="form-input h-48 resize-none" required></textarea>
             </div>
+
             <div class="text-center pt-8">
                 <button type="submit" id="submitBtn" class="btn-luxury">Send Message</button>
             </div>
         </form>
     </section>
+
+    <footer class="bg-white py-20 px-6 border-t border-neutral-100">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center gap-12">
+            <div class="font-serif-en text-2xl tracking-[0.3em] uppercase">Affection Tokyo</div>
+            
+            <nav class="flex space-x-12 text-[9px] uppercase tracking-[0.2em]">
+                <a href="/index.html" class="hover:text-neutral-400">HOME</a>
+            </nav>
+            
+            <div class="text-[8px] tracking-[0.4em] text-neutral-300 uppercase">
+                &copy; Affection Tokyo All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
     <script>
         const GAS_URL = "https://script.google.com/macros/s/AKfycbwYmhJZ22K5gx-EYO7wIjb5MXNgU5v6qSFJeQHptwOicWORKMz53jJG71HAwvNpHMC8Dw/exec";
@@ -66,6 +99,7 @@
             event.preventDefault();
             const form = event.target;
             const submitBtn = document.getElementById('submitBtn');
+            
             submitBtn.innerText = "SENDING...";
             submitBtn.disabled = true;
 
@@ -79,12 +113,15 @@
             try {
                 const response = await fetch(GAS_URL, { method: "POST", body: JSON.stringify(data) });
                 const result = await response.json();
+                
                 if (result.result === "success") {
                     alert("ありがとうございます。メッセージは送信されました。");
-                    window.location.href = "index.html";
-                } else { throw new Error(); }
+                    window.location.href = "/index.html";
+                } else { 
+                    throw new Error(); 
+                }
             } catch (e) {
-                alert("送信に失敗しました。お電話にてお問い合わせください。");
+                alert("送信に失敗しました。お手数ですが、時間をおいて再度お試しいただくか、お電話にてお問い合わせください。");
             } finally {
                 submitBtn.innerText = "Send Message";
                 submitBtn.disabled = false;

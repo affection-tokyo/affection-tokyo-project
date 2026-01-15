@@ -7,10 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #fff; color: #1a1a1a; font-family: 'Noto Sans JP', sans-serif; }
+        body { background-color: #fff; color: #1a1a1a; font-family: 'Noto Sans JP', sans-serif; overflow-x: hidden; }
         .font-serif-en { font-family: 'Cormorant Garamond', serif; }
         
-        /* 浮き上がるようなアニメーション */
+        /* アニメーション */
         .brand-card { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
         .brand-card.visible { opacity: 1; transform: translateY(0); }
         
@@ -21,16 +21,21 @@
         
         .btn-action { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; border-bottom: 1px solid #1a1a1a; padding-bottom: 4px; transition: opacity 0.3s; }
         .btn-action:hover { opacity: 0.5; }
+
+        /* ナビゲーションホバー */
+        .nav-link { position: relative; transition: color 0.3s; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
     </style>
 </head>
 <body>
     <header class="p-6 md:p-12 flex justify-between items-center fixed top-0 w-full z-50 mix-blend-difference text-white">
-        <a href="../index.html" class="font-serif-en text-xl tracking-widest uppercase">Affection Tokyo</a>
+        <a href="/index.html" class="font-serif-en text-xl tracking-widest uppercase">Affection Tokyo</a>
         <nav class="hidden md:flex space-x-12 text-[10px] tracking-[0.3em] uppercase">
-            <a href="/brand/index.html">Brands</a>
-            <a href="/news/index.html">News</a>
-            <a href="/index.html" class="border-b border-white pb-1">Company</a>
-            <a href="/contact.html">Contact</a>
+            <a href="/brand/index.html" class="nav-link border-b border-white pb-1">Brands</a>
+            <a href="/news/index.html" class="nav-link">News</a>
+            <a href="/company/index.html" class="nav-link">Company</a>
+            <a href="/contact.html" class="nav-link">Contact</a>
         </nav>
     </header>
 
@@ -45,18 +50,22 @@
             <div class="brand-card group">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     
-                    <a href="georgesuncinq.html" class="img-zoom aspect-[16/9] bg-neutral-100 block">
+                    <a href="/brand/georgesuncinq.html" class="img-zoom aspect-[16/9] bg-neutral-100 block">
                         <img src="/assets/images/_Y8A8987.jpg" alt="Georgesuncinq" class="w-full h-full object-cover">
                     </a>
 
                     <div>
-                        <h2 class="font-serif-en text-4xl md:text-5xl tracking-widest uppercase mb-6 italic">Georgesuncinq</h2>
+                        <div class="mb-8">
+                            <img src="/assets/images/logo-georgesuncinq.jpg" alt="Georgesuncinq" class="h-8 md:h-10 object-contain">
+                            
+                            </div>
+
                         <p class="text-xs text-neutral-500 leading-loose mb-10 max-w-md">
                             時を経ても色褪せないクラシックな精神と、現代のモードが交差する。纏う人の個性を静かに、そして強く引き出すコレクション。
                         </p>
                         
                         <div class="flex space-x-10">
-                            <a href="georgesuncinq.html" class="btn-action">View Lookbook</a>
+                            <a href="/brand/georgesuncinq.html" class="btn-action">View Lookbook</a>
                             <a href="https://shop.george-5v.com/" target="_blank" class="btn-action">Shop Online</a>
                         </div>
                     </div>
@@ -65,16 +74,26 @@
 
             <div class="brand-card border-t border-neutral-100 pt-24">
                 <div class="text-center">
-                    <span class="font-serif-en text-neutral-300 tracking-[0.3em] italic">Next Brand Coming Soon...</span>
+                    <span class="font-serif-en text-neutral-300 tracking-[0.3em] italic uppercase text-[10px]">Next Brans...</span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-neutral-100">
-        <div class="font-serif-en text-lg tracking-[0.2em] uppercase mb-8">Affection Tokyo</div>
-        <p class="text-[8px] tracking-[0.4em] text-neutral-300 uppercase">&copy; Affection Tokyo All Rights Reserved.</p>
+    <footer class="bg-white py-20 px-6 border-t border-neutral-100">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center gap-12">
+            <div class="font-serif-en text-2xl tracking-[0.3em] uppercase">Affection Tokyo</div>
+            
+            <nav class="flex space-x-12 text-[9px] uppercase tracking-[0.2em]">
+                <a href="/company/index.html" class="hover:text-neutral-400">COMPANY</a>
+                <a href="/contact.html" class="hover:text-neutral-400">Contact</a>
+            </nav>
+            
+            <div class="text-[8px] tracking-[0.4em] text-neutral-300 uppercase">
+                &copy; Affection Tokyo All Rights Reserved.
+            </div>
+        </div>
     </footer>
 
     <script>
