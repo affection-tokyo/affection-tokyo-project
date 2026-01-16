@@ -35,8 +35,13 @@
             <a href="/brand/index.html" class="nav-link">Brands</a>
             <a href="/news/index.html" class="nav-link">News</a>
             <a href="/company/index.html" class="nav-link">Company</a>
-            <a href="/contact.html" class="nav-link border-b border-white pb-1">Contact</a>
+            <a href="/contact.html" class="nav-link">Contact</a>
         </nav>
+
+        <button onclick="toggleMenu()" class="md:hidden flex flex-col justify-center items-end space-y-1.5 focus:outline-none z-[60]">
+            <span id="line1" class="w-6 h-px bg-white transition-all duration-300"></span>
+            <span id="line2" class="w-4 h-px bg-white transition-all duration-300"></span>
+        </button>
     </header>
 
     <section class="pt-60 pb-12 px-6 text-center">
@@ -128,6 +133,38 @@
                 submitBtn.disabled = false;
             }
         }
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const line1 = document.getElementById('line1');
+            const line2 = document.getElementById('line2');
+
+            // メニューの表示・非表示を切り替え
+            menu.classList.toggle('translate-x-full');
+
+            // ボタンの形を × に変える演出
+            if (!menu.classList.contains('translate-x-full')) {
+                line1.style.transform = 'translateY(4px) rotate(45deg)';
+                line2.style.transform = 'translateY(-4px) rotate(-45deg)';
+                line2.style.width = '24px';
+                document.body.style.overflow = 'hidden'; // 背景スクロール禁止
+            } else {
+                line1.style.transform = 'none';
+                line2.style.transform = 'none';
+                line2.style.width = '16px';
+                document.body.style.overflow = ''; // スクロール再開
+            }
+        }
     </script>
+    <div id="mobileMenu" class="fixed inset-0 bg-black/95 z-[55] translate-x-full transition-transform duration-500 md:hidden flex items-center justify-center">
+        <nav class="flex flex-col items-center space-y-12 text-white text-[10px] tracking-[0.4em] uppercase font-serif-en">
+            <a href="/brand/index.html" onclick="toggleMenu()">Brands</a>
+            <a href="/news/index.html" onclick="toggleMenu()">News</a>
+            <a href="/company/index.html" onclick="toggleMenu()">company</a>
+            <a href="/contact.html" onclick="toggleMenu()">Contact</a>
+            <div class="pt-8">
+                <a href="/index.html" onclick="toggleMenu()" class="text-neutral-500">Home</a>
+            </div>
+        </nav>
+    </div>
 </body>
 </html>
