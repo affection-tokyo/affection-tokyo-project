@@ -76,11 +76,8 @@
 
     <!-- Hero Section -->
     <section class="hero-container">
-        <!-- Placeholder for Space Image -->
-        <div class="bg-neutral-200 w-full h-full parallax-img flex items-center justify-center text-neutral-400">
-            <!-- <img src="/assets/images/space-hero.jpg" alt="Space" class="parallax-img"> -->
-            [ Space Main Visual Image ]
-        </div>
+        <img src="/assets/images/0010.jpg" alt="Space Main Visual" class="parallax-img">
+        
         <div class="absolute inset-0 bg-black/10"></div>
         <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10">
             <h1 class="font-serif-en text-5xl md:text-7xl italic font-light mb-6">Space</h1>
@@ -103,10 +100,19 @@
     <!-- Gallery -->
     <section class="py-12 px-6 md:px-12 max-w-7xl mx-auto fade-in">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center text-neutral-300 text-xs">Photo: Floor</div>
-            <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center text-neutral-300 text-xs">Photo: Window</div>
-            <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center text-neutral-300 text-xs">Photo: Equipment</div>
-            <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center text-neutral-300 text-xs">Photo: Entrance</div>
+            <!-- 変更箇所: クリックでモーダルを開くイベントを追加 -->
+            <div class="aspect-[4/3] bg-neutral-100 overflow-hidden group cursor-pointer" onclick="openModal('/assets/images/0010.jpg')">
+                <img src="/assets/images/0010.jpg" alt="Floor" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+            </div>
+            <div class="aspect-[4/3] bg-neutral-100 overflow-hidden group cursor-pointer" onclick="openModal('/assets/images/0010.jpg')">
+                <img src="/assets/images/0010.jpg" alt="Window" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+            </div>
+            <div class="aspect-[4/3] bg-neutral-100 overflow-hidden group cursor-pointer" onclick="openModal('/assets/images/0010.jpg')">
+                <img src="/assets/images/0010.jpg" alt="Equipment" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+            </div>
+            <div class="aspect-[4/3] bg-neutral-100 overflow-hidden group cursor-pointer" onclick="openModal('/assets/images/0010.jpg')">
+                <img src="/assets/images/0010.jpg" alt="Entrance" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+            </div>
         </div>
     </section>
 
