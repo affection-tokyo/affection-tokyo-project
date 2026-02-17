@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACE RENTAL | Affection Tokyo</title>
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+            background-color: #fff;
+            font-size: 14px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.6;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            margin-bottom: 120px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: #1a1a1a;
+            margin: 20px auto 0;
+        }
+
+        /* --- HEADER (Mockup) --- */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 60px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+
+        .nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav li {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            background-color: #f0f0f0; /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            color: #999;
+        }
+        
+        .hero-copy h1 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .hero-copy p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* --- CONCEPT --- */
+        .concept-text {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* --- GALLERY --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: #f5f5f5;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* --- TABLE STYLES (Info & Price) --- */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+        }
+
+        .info-table th {
+            width: 30%;
+            font-weight: normal;
+            color: #666;
+            font-size: 12px;
+            vertical-align: top;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* --- FLOW --- */
+        .flow-list {
+            counter-reset: flow-counter;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .flow-item {
+            text-align: center;
+        }
+
+        .flow-item h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+        
+        .flow-item h3::before {
+            counter-increment: flow-counter;
+            content: "0" counter(flow-counter);
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .flow-item p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* --- CONTACT --- */
+        .contact-area {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 80px 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 15px 60px;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #444;
+            opacity: 1;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            border-top: 1px solid #eee;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-copy h1 { font-size: 24px; }
+            .info-table th, .info-table td { display: block; width: 100%; }
+            .info-table th { padding-bottom: 5px; color: #999; }
+            .info-table td { padding-top: 0; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+            .header-inner { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Existing Site Structure Placeholder) -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="#">AFFECTION TOKYO</a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Brands</a></li>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#" style="border-bottom: 1px solid #000;">Space</a></li> <!-- Current Page -->
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container hero">
+            <div class="hero-image">
+                <!-- Replace with actual main visual -->
+                <span>[ Main Visual Image ]<br>自然光の入るオフィスの全景</span>
+            </div>
+            <div class="hero-copy">
+                <h1>Create in Affection.</h1>
+                <p>千駄ヶ谷の静謐な空間を、あなたの表現の場に。</p>
+            </div>
+        </section>
+
+        <!-- Concept -->
+        <section class="container section">
+            <h2 class="section-title">Concept</h2>
+            <div class="concept-text">
+                <p>
+                    Affection Tokyoのオフィススペースを、展示会、撮影、ワークショップ、POPUPストア等の会場としてご利用いただけます。<br><br>
+                    千駄ヶ谷の落ち着いたエリアに位置し、自然光が差し込む開放的な空間は、ブランドの世界観を大切にするクリエイションの発表の場として最適です。
+                    什器やフィッティングルームも完備しており、アパレル展示会やスチール撮影にスムーズにご活用いただけます。
+                </p>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="container section">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">[ Photo: フロア全体 ]</div>
+                <div class="gallery-item">[ Photo: 窓際・自然光 ]</div>
+                <div class="gallery-item">[ Photo: ハンガーラック等什器 ]</div>
+                <div class="gallery-item">[ Photo: エントランス ]</div>
+            </div>
+        </section>
+
+        <!-- Information / Spec -->
+        <section class="container section">
+            <h2 class="section-title">Information</h2>
+            <table class="info-table">
+                <tr>
+                    <th>Location</th>
+                    <td>東京都渋谷区千駄ヶ谷 1-9-6 K&Kビル 2F<br><span style="font-size:12px; color:#666;">（JR総武線 千駄ヶ谷駅 徒歩X分 / 都営大江戸線 国立競技場駅 徒歩X分）</span></td>
+                </tr>
+                <tr>
+                    <th>Area / Ceiling</th>
+                    <td>約XX平米 / 天井高 X.Xm</td>
+                </tr>
+                <tr>
+                    <th>Capacity</th>
+                    <td>展示会・POPUP：推奨 〜XX名</td>
+                </tr>
+                <tr>
+                    <th>Equipment</th>
+                    <td>
+                        Wi-Fi / 電源 / ハンガーラック(X台) / 全身鏡(X枚) / フィッティングルーム / スピーカー<br>
+                        <a href="#" style="text-decoration: underline; font-size: 12px;">> 什器リスト・図面PDFのダウンロード</a>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Price -->
+        <section class="container section">
+            <h2 class="section-title">Price / Hours</h2>
+            <table class="info-table">
+                <tr>
+                    <th>スチール・ムービー撮影</th>
+                    <td>
+                        <strong>¥XX,000 / h</strong> （税込）<br>
+                        <span class="note">※最低利用時間：3時間〜</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>展示会・イベント利用</th>
+                    <td>
+                        <strong>¥XX,000 / day</strong> （税込）<br>
+                        <span class="note">※10:00 - 19:00 (搬入出含む)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>お支払い方法</th>
+                    <td>事前銀行振込</td>
+                </tr>
+            </table>
+            <p class="note">※長期利用（3日以上）の場合は割引プランがございます。詳細はお問い合わせください。</p>
+        </section>
+
+        <!-- Flow -->
+        <section class="container section">
+            <h2 class="section-title">How to Use</h2>
+            <div class="flow-list">
+                <div class="flow-item">
+                    <h3>Inquiry</h3>
+                    <p>Contactフォームより、<br>希望日時・利用目的をお知らせください。</p>
+                </div>
+                <div class="flow-item">
+                    <h3>Preview</h3>
+                    <p>内覧にて実際の空間や<br>什器・設備をご確認いただけます。</p>
+                </div>
+                <div class="flow-item">
+                    <h3>Reservation</h3>
+                    <p>利用規約に同意の上、利用料をお支払いいただき予約確定となります。</p>
+                </div>
+                <div class="flow-item">
+                    <h3>Use</h3>
+                    <p>当日はスタッフが解錠・設備の説明をいたします。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="section contact-area">
+            <h2>Contact</h2>
+            <p style="margin-top: 20px;">空き状況の確認、内覧のお申し込みはこちらから</p>
+            <a href="contact.html" class="btn">CONTACT FORM</a>
+            <p class="note" style="margin-top: 15px;">※お問い合わせ種別で「リースについて」を選択してください。</p>
+        </section>
+
+    </main>
+
+    <!-- Footer (Existing Site Structure Placeholder) -->
+    <footer>
+        <div class="container">
+            <p>&copy; Affection Tokyo Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
