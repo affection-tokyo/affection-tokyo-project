@@ -139,14 +139,20 @@
     }
     </script>
     <div id="mobileMenu" class="fixed inset-0 bg-black/95 z-[55] translate-x-full transition-transform duration-500 md:hidden flex items-center justify-center">
-        <nav class="flex flex-col items-center space-y-12 text-white text-[10px] tracking-[0.4em] uppercase font-serif-en">
-            <a href="/index.html#brands" onclick="toggleMenu()">Brands</a>
-            <a href="/news/index.html" onclick="toggleMenu()">News</a>
-            <a href="/company/index.html" onclick="toggleMenu()">company</a>
-            <a href="/contact.html" onclick="toggleMenu()">Contact</a>
-            <div class="pt-8">
-                <a href="/index.html" onclick="toggleMenu()" class="text-neutral-500">Home</a>
-            </div>
+    
+    <button onclick="toggleMenu()" class="absolute top-8 right-6 w-10 h-10 flex items-center justify-center focus:outline-none z-[60]">
+    <span class="absolute w-6 h-[1px] bg-white rotate-45"></span>
+    <span class="absolute w-6 h-[1px] bg-white -rotate-45"></span>
+    </button>
+    <nav class="flex flex-col items-center space-y-12 text-white text-[10px] tracking-[0.4em] uppercase font-serif-en">
+        <a href="#brands" onclick="toggleMenu()">Brands</a>
+        <a href="/spacerental/index.html" onclick="toggleMenu()">SPASE RENTAL</a>
+        <a href="/news/index.html" onclick="toggleMenu()">News</a>
+        <a href="/company/index.html" onclick="toggleMenu()">company</a>
+        <a href="/contact.html" onclick="toggleMenu()">Contact</a>
+        <div class="pt-8">
+            <a href="/index.html" onclick="toggleMenu()" class="text-neutral-500">Home</a>
+        </div>
         </nav>
     </div>
 </body>
