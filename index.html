@@ -67,7 +67,11 @@
 </header>
 
     <section class="hero-container">
-        <img src="/assets/images/0001.png" alt="Main Visual" class="parallax-img">
+        <picture>
+            <source media="(max-width: 767px)" srcset="/assets/images/0001-mobile.png">
+            
+            <img src="/assets/images/0001.png" alt="Main Visual" class="parallax-img">
+        </picture>
         <div class="absolute inset-0 bg-black/20"></div>
         <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10">
             <h1 class="font-serif-en text-5xl md:text-9xl italic font-light mb-6">Dressed in Affection</h1>
