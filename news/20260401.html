@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PGS5KZWV');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News | AFFECTION TOKYO（アフェクション東京）</title>
-    <meta name="description" content="株式会社アフェクション東京の最新ニュース・プレスリリース。新ブランドの始動、展示会情報、コーポレートサイトの更新情報など、当社の活動に関するお知らせを一覧でご覧いただけます。">
+    <title>GEORGECINQのECサイトがオープンしました | AFFECTION TOKYO</title>
+    <meta name="description" content="弊社が展開するブランド「GEORGECINQ」の公式オンラインショップがオープンいたしました。最新アイテムを是非ご覧ください。">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
     <style>
@@ -22,23 +20,20 @@
         .cat-label { font-size: 9px; padding: 2px 8px; border: 1px solid #eee; text-transform: uppercase; letter-spacing: 0.1em; }
         .cat-brand { background-color: #111; color: #fff; border-color: #111; }
         
-        /* News List Animation */
-        .news-item { opacity: 0; transform: translateY(10px); transition: all 0.8s ease; }
-        .news-item.visible { opacity: 1; transform: translateY(0); }
-        .news-item:hover .news-title { color: #999; }
-
         /* Navigation Hover */
         .nav-link { position: relative; transition: color 0.3s; }
         .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s; }
         .nav-link:hover::after { width: 100%; }
+
+        /* 記事本文用のスタイル調整 */
+        .post-content p { margin-bottom: 1.5em; }
+        .post-content a { color: #666; text-decoration: underline; text-underline-offset: 4px; transition: color 0.3s; }
+        .post-content a:hover { color: #000; }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGS5KZWV"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-8 mix-blend-difference text-white">
         <a href="/index.html" class="text-xl md:text-2xl font-serif-en tracking-[0.2em] uppercase">Affection Tokyo</a>
         
@@ -56,42 +51,32 @@
         </button>
     </header>
 
-    <section class="pt-60 pb-20 px-6 text-center">
-        <h1 class="font-serif-en text-5xl md:text-7xl italic font-light tracking-widest uppercase mb-4">News</h1>
-        <p class="text-[10px] tracking-[0.4em] text-neutral-400 uppercase">最新のお知らせ</p>
+    <section class="pt-48 pb-12 px-6 text-center max-w-4xl mx-auto">
+        <time class="font-serif-en text-sm text-neutral-400 tracking-widest">2026.01.08</time>
+        <div class="flex items-center justify-center gap-3 mt-4 mb-8">
+            <span class="cat-label cat-brand">Brand</span>
+            <span class="text-[9px] text-neutral-400 font-serif-en uppercase tracking-tighter">Georgesuncinq</span>
+        </div>
+        <h1 class="text-lg md:text-2xl font-light tracking-widest leading-loose">GEORGECINQのECサイトが<br class="hidden md:block">オープンしました</h1>
     </section>
 
-    <section class="pb-48 px-6 md:px-12 max-w-5xl mx-auto">
-        <div class="space-y-2">
-            <article class="news-item border-b border-neutral-100 py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
-                <time class="font-serif-en text-xs text-neutral-400 w-24">2026.01.14</time>
-                <div class="flex items-center gap-3">
-                    <span class="cat-label">Corporate</span>
-                </div>
-                <a href="/news/20260114.html" class="news-title text-sm md:text-base tracking-wider flex-1 transition hover:text-neutral-500">
-                    株式会社アフェクション東京のコーポレートサイトをリニューアルいたしました。
-                </a>
-            </article>
-
-            <article class="news-item border-b border-neutral-100 py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
-                <time class="font-serif-en text-xs text-neutral-400 w-24">2026.01.08</time>
-                <div class="flex items-center gap-3">
-                    <span class="cat-label cat-brand">Brand</span>
-                    <span class="text-[9px] text-neutral-400 font-serif-en uppercase tracking-tighter">Georgesuncinq</span>
-                </div>
-                <a href="/news/20260108.html" class="news-title text-sm md:text-base tracking-wider flex-1 transition hover:text-neutral-500">
-                    GEORGECINQのECサイトがオープンしました。
-                </a>
-            </article>
-
+    <section class="pb-32 px-6 md:px-12 max-w-3xl mx-auto">
+        <div class="border-t border-neutral-100 pt-16 text-sm md:text-base leading-loose tracking-wide text-neutral-700 post-content">
             
-        </div>
+            <p>平素は格別のお引き立てを賜り、誠にありがとうございます。</p>
+            <p>この度、弊社が展開するブランド「GEORGECINQ」の公式オンラインショップがオープンいたしました。</p>
+            <p>最新のコレクションから定番のアイテムまで、ブランドの世界観をより深く感じていただけるラインナップをご用意しております。スマートフォンやパソコンから、いつでもお買い物をお楽しみいただけます。<br>
+            ぜひこの機会にご覧くださいませ。</p>
+            
+            <p class="mt-8">
+                <strong>■ GEORGECINQ 公式オンラインショップ</strong><br>
+                <a href="https://shop.george-5v.com/" target="_blank" rel="noopener noreferrer">https://shop.george-5v.com/</a>
+            </p>
+            </div>
 
-        <div class="mt-24 text-center">
-            <a href="/news/archive.html" class="inline-flex items-center gap-4 group">
-                <span class="w-8 md:w-12 h-px bg-neutral-200 group-hover:bg-black transition-colors duration-300"></span>
-                <span class="font-serif-en text-xs md:text-sm tracking-[0.2em] uppercase text-neutral-400 group-hover:text-black transition-colors duration-300">View Backnumber</span>
-                <span class="w-8 md:w-12 h-px bg-neutral-200 group-hover:bg-black transition-colors duration-300"></span>
+        <div class="mt-20 text-center">
+            <a href="/news/index.html" class="inline-block text-xs tracking-widest text-neutral-500 hover:text-black border-b border-transparent hover:border-black transition-all duration-300 pb-1 font-serif-en uppercase">
+                Back to List
             </a>
         </div>
     </section>
@@ -112,29 +97,23 @@
     </footer>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.news-item').forEach(el => observer.observe(el));
     function toggleMenu() {
         const menu = document.getElementById('mobileMenu');
         const line1 = document.getElementById('line1');
         const line2 = document.getElementById('line2');
 
-        // メニューの表示・非表示を切り替え
         menu.classList.toggle('translate-x-full');
 
-        // ボタンの形を × に変える演出
         if (!menu.classList.contains('translate-x-full')) {
             line1.style.transform = 'translateY(4px) rotate(45deg)';
             line2.style.transform = 'translateY(-4px) rotate(-45deg)';
             line2.style.width = '24px';
-            document.body.style.overflow = 'hidden'; // 背景スクロール禁止
+            document.body.style.overflow = 'hidden'; 
         } else {
             line1.style.transform = 'none';
             line2.style.transform = 'none';
             line2.style.width = '16px';
-            document.body.style.overflow = ''; // スクロール再開
+            document.body.style.overflow = ''; 
         }
     }
     </script>
@@ -145,15 +124,4 @@
     <span class="absolute w-6 h-[1px] bg-white -rotate-45"></span>
     </button>
     <nav class="flex flex-col items-center space-y-12 text-white text-[10px] tracking-[0.4em] uppercase font-serif-en">
-        <a href="#brands" onclick="toggleMenu()">Brands</a>
-        <a href="/spacerental/index.html" onclick="toggleMenu()">SPASE RENTAL</a>
-        <a href="/news/index.html" onclick="toggleMenu()">News</a>
-        <a href="/company/index.html" onclick="toggleMenu()">company</a>
-        <a href="/contact.html" onclick="toggleMenu()">Contact</a>
-        <div class="pt-8">
-            <a href="/index.html" onclick="toggleMenu()" class="text-neutral-500">Home</a>
-        </div>
-        </nav>
-    </div>
-</body>
-</html>
+        <a href
